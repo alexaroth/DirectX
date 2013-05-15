@@ -238,7 +238,7 @@ bool graphics::InitScene()
 
 	light.pos = XMFLOAT3(0.0f, 0.0f, 0.0f);
 	light.range = 100.0f;
-	light.att = XMFLOAT3(0.3f, 0.019f, 0.0f);
+	light.att = XMFLOAT3(0.3f, 0.0191f, 0.0f);
 	light.ambient = XMFLOAT4(0.4f, 0.4f, 0.4f, 1.0f);
 	light.diffuse = XMFLOAT4(0.9f, 0.9f, 0.9f, 1.0f);
     light.specular = XMFLOAT4(0.1f, 0.1f, 0.1f, 0.0f);
