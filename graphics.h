@@ -36,6 +36,8 @@ public:
 
         
     void DrawScene();
+
+
     void UpdateScene(float tStep);
     bool InitScene();
     void CleanUp();
