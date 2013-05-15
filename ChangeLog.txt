@@ -1,0 +1,24 @@
+
+Generic DirectX Engine
+
+
+ChangeLog:
+
+
+* v0.1 (Initial release)
+
+Basic 3D features:
+
+- 3D world rendering
+- Camera control 
+- Model loader (.obj)
+- Textures
+- Alpha blending
+- Per-pixel lighting (Phong)
+- Basic sound engine
+
+
+
+*v 0.2   
+
+ 
