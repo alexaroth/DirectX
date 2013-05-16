@@ -87,7 +87,7 @@ bool InitializeWindow(HINSTANCE hInstance, int ShowWnd, int width, int height, b
 		return 1;
 	}
 
-	hwnd = CreateWindowEx(NULL, WndClassName, L"Battlefield 0.4", WS_OVERLAPPEDWINDOW,CW_USEDEFAULT, CW_USEDEFAULT,
+	hwnd = CreateWindowEx(NULL, WndClassName, L"Shooting Range Sim", WS_OVERLAPPEDWINDOW,CW_USEDEFAULT, CW_USEDEFAULT,
 		                  width, height, nullptr, nullptr, hInstance, nullptr);
 
 	if (!hwnd)
