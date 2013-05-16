@@ -5,7 +5,7 @@ GameObject::GameObject()
 {}
 
 GameObject::GameObject(ID3D11Device* d3d11Device, ID3D11SamplerState* CubesTexSamplerState, ID3D11RasterizerState* CWcullMode, ID3D11RasterizerState* CCWcullMode, 
-                       char* objFile, wstring texture, CameraClass &camera, float scale, bool hasLight, rawModel* imported_raw)
+                       char* objFile, wstring texture, CameraClass &camera, float scale, bool hasLight, bool hasAlpha, rawModel* imported_raw)
 {    
     objectModel = nullptr;
     isRotating = false;

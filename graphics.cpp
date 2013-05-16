@@ -319,8 +319,7 @@ bool graphics::InitScene()
 	blendDesc.AlphaToCoverageEnable = false;
 	blendDesc.RenderTarget[0] = rtbd;
     
-    d3d11Device->CreateBlendState(&blendDesc, &Transparency);
-    
+    d3d11Device->CreateBlendState(&blendDesc, &Transparency);    
 
 	// Describe the Sample State
 	D3D11_SAMPLER_DESC sampDesc;
@@ -350,23 +349,23 @@ bool graphics::InitScene()
 	hr = d3d11Device->CreateRasterizerState(&cmdesc, &CWcullMode);
 
 
-    MainObject = GameObject(d3d11Device, CubesTexSamplerState, CWcullMode, CCWcullMode, "strange2.obj", L"face.jpg", camera1, 1.0, true, nullptr);    
+    MainObject = GameObject(d3d11Device, CubesTexSamplerState, CWcullMode, CCWcullMode, "strange2.obj", L"face.jpg", camera1, 1.0, true, false, nullptr);    
        
-    ground = GameObject(d3d11Device, CubesTexSamplerState, CWcullMode, CCWcullMode, "ground.obj", L"ground.bmp", camera1, 1.0, true, nullptr);    
-    cube1 = GameObject(d3d11Device, CubesTexSamplerState, CWcullMode, CCWcullMode, "cube.obj", L"tex3.png", camera1, 1, true, nullptr);
-    cube3 = GameObject(d3d11Device, CubesTexSamplerState, CWcullMode, CCWcullMode, "cube.obj", L"tex2.jpg", camera1, 1, true, cube1.getRawModel());
-    cube2 = GameObject(d3d11Device, CubesTexSamplerState, CWcullMode, CCWcullMode, "cube.obj", L"tex1.jpg", camera1, 1, true, cube1.getRawModel());
+    ground = GameObject(d3d11Device, CubesTexSamplerState, CWcullMode, CCWcullMode, "ground.obj", L"ground.bmp", camera1, 1.0, true, false, nullptr);    
+    cube1 = GameObject(d3d11Device, CubesTexSamplerState, CWcullMode, CCWcullMode, "cube.obj", L"tex3.png", camera1, 1, true, true, nullptr);
+    cube3 = GameObject(d3d11Device, CubesTexSamplerState, CWcullMode, CCWcullMode, "cube.obj", L"tex2.jpg", camera1, 1, true, false, cube1.getRawModel());
+    cube2 = GameObject(d3d11Device, CubesTexSamplerState, CWcullMode, CCWcullMode, "cube.obj", L"tex1.jpg", camera1, 1, true, false, cube1.getRawModel());
        
-    ChildObject1 = GameObject(d3d11Device, CubesTexSamplerState, CWcullMode, CCWcullMode, "ball2.obj", L"face.jpg", camera1, 0.5, true, MainObject.getRawModel());
-    ChildObject1_1 = GameObject(d3d11Device, CubesTexSamplerState, CWcullMode, CCWcullMode, "ball2.obj", L"face.jpg", camera1, 0.5, true, ChildObject1.getRawModel());
-    ChildObject2 = GameObject(d3d11Device, CubesTexSamplerState, CWcullMode, CCWcullMode, "ball2.obj", L"face.jpg", camera1, 0.5, true, ChildObject1.getRawModel());
-    ChildObject2_1 = GameObject(d3d11Device, CubesTexSamplerState, CWcullMode, CCWcullMode, "ball2.obj", L"face.jpg", camera1, 0.5, true, ChildObject1.getRawModel());
-    ChildObject2_2 = GameObject(d3d11Device, CubesTexSamplerState, CWcullMode, CCWcullMode, "ball2.obj", L"face.jpg", camera1, 0.3, true, ChildObject1.getRawModel());
+    ChildObject1 = GameObject(d3d11Device, CubesTexSamplerState, CWcullMode, CCWcullMode, "ball2.obj", L"face.jpg", camera1, 0.5, true, false, MainObject.getRawModel());
+    ChildObject1_1 = GameObject(d3d11Device, CubesTexSamplerState, CWcullMode, CCWcullMode, "ball2.obj", L"face.jpg", camera1, 0.5, true, false, ChildObject1.getRawModel());
+    ChildObject2 = GameObject(d3d11Device, CubesTexSamplerState, CWcullMode, CCWcullMode, "ball2.obj", L"face.jpg", camera1, 0.5, true, false, ChildObject1.getRawModel());
+    ChildObject2_1 = GameObject(d3d11Device, CubesTexSamplerState, CWcullMode, CCWcullMode, "ball2.obj", L"face.jpg", camera1, 0.5, true, false, ChildObject1.getRawModel());
+    ChildObject2_2 = GameObject(d3d11Device, CubesTexSamplerState, CWcullMode, CCWcullMode, "ball2.obj", L"face.jpg", camera1, 0.3, true, false, ChildObject1.getRawModel());
 
-    flashlight = GameObject(d3d11Device, CubesTexSamplerState, CWcullMode, CCWcullMode, "ball2.obj", L"face.jpg", camera1, 0.1, true, ChildObject1.getRawModel());
+    flashlight = GameObject(d3d11Device, CubesTexSamplerState, CWcullMode, CCWcullMode, "ball2.obj", L"face.jpg", camera1, 0.1, true, false, ChildObject1.getRawModel());
    
-    rainDrop = GameObject(d3d11Device, CubesTexSamplerState, CWcullMode, CCWcullMode, "rainDrop.obj", L"rain.png", camera1, 0.02, false, nullptr);
-    MG = GameObject(d3d11Device, CubesTexSamplerState, CWcullMode, CCWcullMode, "mg2.obj", L"face.jpg", camera1, 0.3, true, nullptr);
+    rainDrop = GameObject(d3d11Device, CubesTexSamplerState, CWcullMode, CCWcullMode, "rainDrop.obj", L"rain.png", camera1, 0.02, false, true, nullptr);
+    MG = GameObject(d3d11Device, CubesTexSamplerState, CWcullMode, CCWcullMode, "mg2.obj", L"face.jpg", camera1, 0.3, true, false, nullptr);
 
     
     rain_spawner = rainSpawner(rainDrop, camera1);

@@ -12,7 +12,7 @@ public:
 
     GameObject(ID3D11Device* d3d11Device, ID3D11SamplerState* CubesTexSamplerState, ID3D11RasterizerState* CWcullMode,
                       ID3D11RasterizerState* CCWcullMode, char* objFile, wstring texture, CameraClass &camera, float scale, 
-                      bool hasLight, rawModel* imported_raw);
+                      bool hasLight, bool hasAlpha, rawModel* imported_raw);
 
     ~GameObject();
     void draw(ID3D11DeviceContext* d3d11DevCon, ID3D11Buffer* cbPerObjectBuffer);
